@@ -2,7 +2,7 @@
   animation: anim;
   animation-iteration-count: infinite;
   animation-duration: 10s;
-  animation-delay: 1.2s;
+  animation-delay: 1s;
   width: 100%;
 
 }
@@ -30,7 +30,7 @@
 
   40% {
     width: 60%;
-    background-color: #f1e722;
+    background-color: rebeccapurple;
   }
 
   50% {

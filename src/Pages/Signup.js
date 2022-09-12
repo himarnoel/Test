@@ -23,7 +23,7 @@ const Signup = () => {
 
   const signUp = async () => {
     if (Fname != "" && Lname !== "" && email !== "" && pass !== "") {
-      let obj = { Fname, Lname, email, pass, score: 0 };
+      let obj = { Fname, Lname, email, pass, score: 0, qf: 0, qp: 0, tq: 0 };
       await setStore(() => {
         let data = [...store, obj];
         localStorage.users = JSON.stringify(data);
@@ -92,7 +92,7 @@ const Signup = () => {
             </button>
           </div>
         </div>
-    </div>
+      </div>
     </div>
   );
 };

@@ -6,11 +6,12 @@ import { useNavigate, Link } from "react-router-dom";
 const Signin = () => {
   const [email, setemail] = useState("");
   const [pass, setpass] = useState("");
+
   const navigate = useNavigate();
   const signin = () => {
     if (email !== "" && pass !== "") {
       let fetchedData = JSON.parse(localStorage.users);
-      console.log(fetchedData);
+      // console.log(fetchedData);
       for (let index = 0; index < fetchedData.length; index++) {
         console.log(fetchedData[index]);
         if (
@@ -19,11 +20,13 @@ const Signin = () => {
         ) {
           alert("good");
           localStorage.index = JSON.stringify(index);
-          navigate("/home");
+          navigate("/ready");
           break;
         } else {
-          alert("Incorrect username or password");
-          break;
+          if (!(fetchedData.length > 1)) {
+            alert("Incorrect username or password");
+            break;
+          }
         }
       }
     } else {
@@ -41,12 +44,13 @@ const Signin = () => {
             className="object-center pt-3 ps-2 align-middle"
           />
         </div>
-        <div className="flex justify-center items-center lg:w-2/4 w-screen  md:w-screen">
+        <div className="flex flex-col  lg:justify-center lg:items-center items-start lg:w-2/4 w-screen  md:w-screen">
+          <img className="h-16 ps-2 pt-2 lg:hidden" src={img2} />
           <div className=" h-96 align-middle w-screen px-6  lg:w-2/3 grid grid-cols-1 mt-5 mb-5">
             <p className="text-start font-medium  text-4xl text-[#6369D1] ">
               Sign In
             </p>
-            <br />
+
             <Input
               label="Email"
               type="text"
@@ -69,7 +73,6 @@ const Signin = () => {
           </div>
         </div>
       </div>
-    
     </div>
   );
 };

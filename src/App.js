@@ -5,6 +5,8 @@ import Signup from "./Pages/Signup";
 import Signin from "./Pages/Signin";
 import Home from "./Pages/Home";
 import { Routes, Route } from "react-router-dom";
+import Ready from "./Pages/Ready";
+import Result from "./Pages/Result";
 
 function App() {
   return (
@@ -13,6 +15,8 @@ function App() {
         <Route path="/" element={<Signup />} />
         <Route path="/signin" element={<Signin />} />
         <Route path="/home" element={<Home />} />
+        <Route path="/ready" element={<Ready />} />
+        <Route path="/result" element={<Result />} />
       </Routes>
     </div>
   );
